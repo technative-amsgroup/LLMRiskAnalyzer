@@ -7,7 +7,7 @@ class BrainstormingAgent:
         self.prompt_template = """You are assisting a risk analysis engineer in performing FMEA analysis. Here is the FMEA table data:
 {{fmea_table}}
 
-Now, you should focus on the {{dic_key_value}} in a FEMA entry {{selected_row}}. 
+Now, you should focus on the {{dic_key_value}} in a FEMA entry {{selected_row}}.
 The user is editing the entry with the key "{{dic}}", and he/she has entered "{{user_text}}", you shall help to complete it.
 Please brainstorm and provide 5 variants, possibly addressing different possible aspects, and generate a concise reason and a concise comment for each one.
 
@@ -58,7 +58,7 @@ class CompletingAgent:
         self.prompt_template = """You are assisting a risk analysis engineer in performing FMEA analysis. Here is the FMEA table data:
 {{fmea_table}}
 
-Now, you should focus on the {{dic_key_value}} in row {{selected_row}}. 
+Now, you should focus on the {{dic_key_value}} in row {{selected_row}}.
 Please brainstorm and provide 3 alternative items for "{{dic}}", addressing different possible aspects, and generate a concise reason and a concise comment for each one.
 
 You should provide the output in JSON format using the following template:
