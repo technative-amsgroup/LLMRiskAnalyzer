@@ -1,10 +1,10 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
-import together
+#import together
 
 load_dotenv()
-together.api_key = os.getenv('TOGETHER_API_KEY')
+#together.api_key = os.getenv('TOGETHER_API_KEY')
 gpt_call_count = 0
 
 
@@ -45,13 +45,13 @@ def gpt_model_call(prompt, model='Mixtral-8x22B'):
             ]
         )
         model_output = model_response.choices[0].message.content
-    else:
-        model_response = together.Complete.create(
-            prompt=prompt,
-            model=model_name,
-            max_tokens=max_tokens,
-            temperature=0,
-            stop=["\n\n"]
-        )
-        model_output = model_response['output']['choices'][0]['text'].strip()
+#    else:
+#        model_response = together.Complete.create(
+#            prompt=prompt,
+#            model=model_name,
+#            max_tokens=max_tokens,
+#            temperature=0,
+#            stop=["\n\n"]
+#        )
+#        model_output = model_response['output']['choices'][0]['text'].strip()
     return model_output
